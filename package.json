@@ -10,7 +10,7 @@
     "watch": "grafana-toolkit plugin:dev --watch",
     "archive": "gulp package",
     "clean": "gulp clean",
-    "sign": "grafana-toolkit plugin:sign"
+    "sign": "grafana-toolkit plugin:sign --rootUrls http://localhost:3000"
   },
   "repository": {
     "type": "git",

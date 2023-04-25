@@ -10,7 +10,8 @@ window.open = function (open) {
     return function(url: string | URL | undefined, name: any, features: any) {
         let target = url!.toString().split("/").at(-1)!;
         if (target.startsWith("Request:")) {
-            console.log(target.replace("Request:", ""));
+            let query = target.replace("Request:", "");
+            fetch("http://localhost:8080/" + query, {mode:"no-cors"})
             return null;
         }
         return open.call(window, url, name, features);
