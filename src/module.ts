@@ -8,10 +8,10 @@ grafana.loadCss();
 // document.domain = "localhost";
 window.open = function (open) {
     return function(url: string | URL | undefined, name: any, features: any) {
-        let target = url!.toString().split("/").at(-1)!;
+        let target = url!.toString();
         if (target.startsWith("Request:")) {
             let query = target.replace("Request:", "");
-            fetch(query, {mode:"no-cors"})
+            fetch(query, {mode:"no-cors"});
             return null;
         }
         return open.call(window, url, name, features);
