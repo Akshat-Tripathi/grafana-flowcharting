@@ -11,7 +11,7 @@ window.open = function (open) {
         let target = url!.toString().split("/").at(-1)!;
         if (target.startsWith("Request:")) {
             let query = target.replace("Request:", "");
-            fetch("http://localhost:8080/" + query, {mode:"no-cors"})
+            fetch(query, {mode:"no-cors"})
             return null;
         }
         return open.call(window, url, name, features);
